@@ -2,32 +2,48 @@
 Website for academic association GLIF of Sungkyunkwan Univ. at Seoul, South Korea.
  
 ## Project Introduction
-![main](./screenshots/main.png)
 This Project aims to build communication channel for GLIFers.
-This Project was built using Python Django Project, and plan to provide:
+
+![main](./screenshots/main.png)
+
+This Project was built using Python Django Project, and plan to provide functionalities such as:
 - Introduction of GLIF
 - Session Materials
  
 ## Quick Start
   
 ### Activate Virtual Environment
-set current directory as this git repo, GLIF_Website_Project.
+Set current directory as this git repo, GLIF_Website_Project.
 1. Create venv:
 ```
-python -n venv .venv
+python -m venv .venv
 ```
 This command will create a virtual environment with dirname '.venv'
 
-2.  Collect Dependencies. Dependencies are listed in **requirements.txt**, so following command will do necessary tasks.
-```
-pip install -r requirements.txt
-```
-
-3. activate
+2. Activate
 activate using command:
 ```
-$ source .venv/Scripts/activate
+$ source .venv/bin/activate
 (.venv) $ 
+```
+
+3. Create secret keys
+Add file named '.env' to the project dir.
+Paste the following to the content:
+```
+SECRET_KEY=secret_key
+DEBUG=True
+DB_NAME=mysql
+DB_USER=db_user
+DB_PASSWORD=db_password
+DB_HOST=127.0.0.1
+ALLOWED_HOSTS=127.0.0.1
+```
+This just work temporarily. This need to be clarifyed when deploying. 
+
+4. Collect Dependencies. Dependencies are listed in **requirements.txt**, so following command will do necessary tasks.
+```
+(.venv) $ pip install -r requirements.txt
 ```
 
 ### Run the server
