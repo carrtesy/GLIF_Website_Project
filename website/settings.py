@@ -56,15 +56,15 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     
     # packages
-    'ckeditor',
-    'ckeditor_uploader',
-    'easy_pdf',
+ #   'ckeditor',
+ #   'ckeditor_uploader',
+ #   'easy_pdf',
 
     # styling
     'crispy_forms',
 
     # Amazon S3
-    'storages',
+ #   'storages',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -105,15 +105,16 @@ WSGI_APPLICATION = 'website.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 # Development database
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#    }
-#}
+DATABASES = {
+   'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Production database
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -123,6 +124,7 @@ DATABASES = {
         'HOST': config('DB_HOST'),
     }
 }
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -178,11 +180,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Emails
-EMAIL_HOST = config('EMAIL_HOST')
-EMAIL_PORT = config('EMAIL_PORT', cast = int)
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-DEFAULT_FROM_EMAIL = 'GLIF Admin Team <sitemanage.glif@gmail.com>'
+#EMAIL_HOST = config('EMAIL_HOST')
+#EMAIL_PORT = config('EMAIL_PORT', cast = int)
+#EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+#EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+#EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+#DEFAULT_FROM_EMAIL = 'GLIF Admin Team <sitemanage.glif@gmail.com>'
 
 

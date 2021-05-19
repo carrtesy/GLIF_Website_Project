@@ -5,7 +5,7 @@ from .models import Post
 from django.urls import reverse_lazy
 
 # pdf
-from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
+#from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
 
 # id
 from users.models import Glifer, CustomUser
@@ -16,6 +16,7 @@ from django.contrib.auth.mixins import UserPassesTestMixin
 
 from .forms import PostForm
 
+'''
 class CreateReport(PDFTemplateResponseMixin, DetailView):
     template_name = 'daily_market/pdf_template.html'
     model = Post
@@ -101,4 +102,4 @@ class PostDeleteView(UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.writer.user == self.request.user
-    
+'''    

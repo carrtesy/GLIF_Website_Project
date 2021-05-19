@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
 from django.urls import reverse_lazy
-from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
+#from easy_pdf.views import PDFTemplateView, PDFTemplateResponseMixin
 
 from users.models import Glifer, CustomUser
 from django.http import HttpResponseRedirect
@@ -13,6 +13,7 @@ from .forms import PostForm
 from django.contrib.auth.mixins import UserPassesTestMixin
 
 
+'''
 class CreateReport(PDFTemplateResponseMixin, DetailView):
     template_name = 'daily_news/pdf_template.html'
     model = Post
@@ -32,8 +33,9 @@ class CreateReport(PDFTemplateResponseMixin, DetailView):
             **kwargs,
             charset = "utf-8",
         )
+'''
 
-
+'''
 # Create your views here.
 class PostListView(ListView):
     model = Post
@@ -96,3 +98,5 @@ class PostDeleteView(UserPassesTestMixin, DeleteView):
     def test_func(self):
         obj = self.get_object()
         return obj.writer.user == self.request.user
+
+'''
